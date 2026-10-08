@@ -1,0 +1,8 @@
+seed: 2025
+model: "board_mamba"
+checkpoint: "experiments/checkpoints/board_mamba_real_joint.pt"
+output: "data/self_play/self_play_real_mamba.parquet"
+games: 20
+simulations: 32
+max_plies: 160
+temperature_plies: 16

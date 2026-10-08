@@ -1,0 +1,22 @@
+seed: 2031
+init_checkpoint: "experiments/checkpoints/cnn_baseline_medium_policy.pt"
+model:
+  name: "cnn_baseline"
+  kwargs:
+    channels: 96
+    n_blocks: 3
+    dropout: 0.1
+data:
+  train: "data/processed_medium/policy_train.parquet"
+  val: "data/processed_medium/policy_val.parquet"
+  value_train: "data/value_labels_medium/stockfish_values_train.parquet"
+  value_val: "data/value_labels_medium/stockfish_values_val.parquet"
+train:
+  batch_size: 512
+  epochs: 2
+  lr: 0.0002
+  weight_decay: 0.01
+  lambda_value: 0.5
+output:
+  joint_metrics: "experiments/results/joint_metrics_medium_cnn.csv"
+  joint_checkpoint: "experiments/checkpoints/cnn_baseline_medium_joint.pt"

@@ -1,0 +1,17 @@
+seed: 2026
+model: "board_mamba"
+checkpoint: "experiments/checkpoints/board_mamba_real_self_play.pt"
+opponent_checkpoint: "experiments/checkpoints/board_mamba_real_joint.pt"
+opponent_model: "board_mamba"
+output: "data/self_play/self_play_real_mamba_reward_shaped.parquet"
+games: 20
+simulations: 16
+max_plies: 120
+temperature_plies: 16
+start_fens: "data/interim/self_play_start_fens.txt"
+max_start_fens: 200
+reward:
+  win_value: 1.0
+  draw_value: -0.2
+  loss_value: -1.0
+record_player: "both"

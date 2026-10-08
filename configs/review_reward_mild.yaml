@@ -1,0 +1,6 @@
+input: "data/self_play/self_play_real_mamba_reward_mild.parquet"
+output: "experiments/results/review_reward_mild.parquet"
+policy_output: "data/processed/review_policy_reward_mild.parquet"
+limit_positions: 500
+depth: 8
+min_value_gain: 0.12

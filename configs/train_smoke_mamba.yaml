@@ -1,0 +1,23 @@
+seed: 2025
+model:
+  name: "board_mamba"
+  kwargs:
+    d_model: 64
+    n_layers: 1
+    d_state: 16
+    dropout: 0.1
+data:
+  train: "data/processed/policy_train.parquet"
+  val: "data/processed/policy_val.parquet"
+  value_train: "data/value_labels/stockfish_values_train.parquet"
+  value_val: "data/value_labels/stockfish_values_val.parquet"
+train:
+  batch_size: 256
+  epochs: 1
+  lr: 0.0005
+  weight_decay: 0.01
+output:
+  metrics: "experiments/results/policy_metrics_smoke_mamba.csv"
+  value_metrics: "experiments/results/value_metrics_smoke_mamba.csv"
+  checkpoint: "experiments/checkpoints/board_mamba_smoke.pt"
+  value_checkpoint: "experiments/checkpoints/board_mamba_value_smoke.pt"

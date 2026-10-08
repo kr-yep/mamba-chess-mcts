@@ -1,0 +1,23 @@
+seed: 2025
+init_checkpoint: "experiments/checkpoints/board_mamba_real_pilot.pt"
+model:
+  name: "board_mamba"
+  kwargs:
+    d_model: 128
+    n_layers: 3
+    d_state: 16
+    dropout: 0.1
+data:
+  train: "data/processed/policy_train.parquet"
+  val: "data/processed/policy_val.parquet"
+  value_train: "data/value_labels/stockfish_values_train.parquet"
+  value_val: "data/value_labels/stockfish_values_val.parquet"
+train:
+  batch_size: 256
+  epochs: 2
+  lr: 0.0002
+  weight_decay: 0.01
+  lambda_value: 0.5
+output:
+  joint_metrics: "experiments/results/joint_metrics_real_mamba.csv"
+  joint_checkpoint: "experiments/checkpoints/board_mamba_real_joint.pt"

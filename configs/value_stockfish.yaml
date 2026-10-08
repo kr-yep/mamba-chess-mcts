@@ -1,0 +1,5 @@
+input: "data/processed/policy_train.parquet"
+output: "data/value_labels/stockfish_values.parquet"
+limit_positions: 50000
+depth: 10
+time_limit: null

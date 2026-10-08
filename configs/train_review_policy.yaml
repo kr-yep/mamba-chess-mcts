@@ -1,0 +1,20 @@
+seed: 2028
+init_checkpoint: "experiments/checkpoints/board_mamba_real_self_play_reward_mild.pt"
+model:
+  name: "board_mamba"
+  kwargs:
+    d_model: 128
+    n_layers: 3
+    d_state: 16
+    dropout: 0.1
+data:
+  review_policy: "data/processed/review_policy_reward_mild.parquet"
+  val_frac: 0.1
+train:
+  batch_size: 64
+  epochs: 3
+  lr: 0.00002
+  weight_decay: 0.01
+output:
+  metrics: "experiments/results/review_policy_metrics_real_mamba.csv"
+  checkpoint: "experiments/checkpoints/board_mamba_real_review_policy.pt"

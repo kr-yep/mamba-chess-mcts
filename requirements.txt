@@ -1,0 +1,15 @@
+torch
+numpy
+pandas
+pyarrow
+tqdm
+matplotlib
+scikit-learn
+python-chess
+zstandard
+PyYAML
+tensorboard
+tabulate
+einops
+seaborn
+pytest

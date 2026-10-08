@@ -1,0 +1,10 @@
+seed: 2025
+variants:
+  - board_mamba
+  - board_mamba_2dpe
+  - board_mamba_shuffled
+  - cnn_baseline
+train:
+  batch_size: 128
+  epochs: 5
+  lr: 0.0003

@@ -1,0 +1,23 @@
+seed: 2025
+model:
+  name: "board_mamba_shuffled"
+  kwargs:
+    d_model: 128
+    n_layers: 3
+    d_state: 16
+    dropout: 0.1
+data:
+  train: "data/processed/policy_train.parquet"
+  val: "data/processed/policy_val.parquet"
+  value_train: "data/value_labels/stockfish_values_train.parquet"
+  value_val: "data/value_labels/stockfish_values_val.parquet"
+train:
+  batch_size: 256
+  epochs: 3
+  lr: 0.0005
+  weight_decay: 0.01
+output:
+  metrics: "experiments/results/policy_metrics_pilot_mamba_shuffled.csv"
+  value_metrics: "experiments/results/value_metrics_pilot_mamba_shuffled.csv"
+  checkpoint: "experiments/checkpoints/board_mamba_shuffled_pilot.pt"
+  value_checkpoint: "experiments/checkpoints/board_mamba_shuffled_value_pilot.pt"

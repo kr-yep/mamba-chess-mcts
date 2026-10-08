@@ -1,0 +1,13 @@
+model_a: "board_mamba"
+checkpoint_a: "experiments/checkpoints/board_mamba_real_review_policy.pt"
+agent_a: "mcts"
+model_b: "board_mamba"
+checkpoint_b: "experiments/checkpoints/board_mamba_real_self_play_reward_mild.pt"
+agent_b: "mcts"
+games: 100
+simulations_a: 32
+simulations_b: 32
+start_fens: "data/interim/self_play_start_fens.txt"
+max_start_fens: 100
+max_plies: 180
+output: "experiments/results/head_to_head_review_policy_vs_reward_mild_gated.csv"

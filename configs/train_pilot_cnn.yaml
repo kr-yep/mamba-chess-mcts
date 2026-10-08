@@ -1,0 +1,22 @@
+seed: 2025
+model:
+  name: "cnn_baseline"
+  kwargs:
+    channels: 96
+    n_blocks: 3
+    dropout: 0.1
+data:
+  train: "data/processed/policy_train.parquet"
+  val: "data/processed/policy_val.parquet"
+  value_train: "data/value_labels/stockfish_values_train.parquet"
+  value_val: "data/value_labels/stockfish_values_val.parquet"
+train:
+  batch_size: 256
+  epochs: 3
+  lr: 0.0005
+  weight_decay: 0.01
+output:
+  metrics: "experiments/results/policy_metrics_pilot_cnn.csv"
+  value_metrics: "experiments/results/value_metrics_pilot_cnn.csv"
+  checkpoint: "experiments/checkpoints/cnn_baseline_pilot.pt"
+  value_checkpoint: "experiments/checkpoints/cnn_baseline_value_pilot.pt"

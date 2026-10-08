@@ -1,0 +1,6 @@
+model: "board_mamba"
+checkpoint: "experiments/checkpoints/board_mamba.pt"
+simulations: [32, 64]
+c_puct: 1.5
+games: 50
+seed: 2025
